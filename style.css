@@ -246,14 +246,57 @@ main {
   justify-content: center;
 }
 
-.tech-grid img {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.2s ease;
+.tech-grid a,
+.tech-grid button.tech-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  background: color-mix(in srgb, var(--secondary) 70%, transparent);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  cursor: pointer;
 }
 
-.tech-grid img:hover {
-  transform: scale(1.08);
+.tech-grid img {
+  width: 32px;
+  height: 32px;
+}
+
+.tech-grid a:hover,
+.tech-grid button.tech-tile:hover {
+  transform: translateY(-6px) scale(1.08) rotate(-2deg);
+  border-color: var(--accent);
+  box-shadow: 0 14px 32px rgba(20, 184, 166, 0.28);
+}
+
+.tech-apps {
+  padding-top: 64px;
+}
+
+.tech-app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.tech-app-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  scroll-margin-top: 120px;
+}
+
+.tech-app-card:hover,
+.tech-app-card:target {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 16px 40px rgba(20, 184, 166, 0.2);
 }
 
 .page .invert-on-dark {
@@ -463,13 +506,13 @@ main {
   border-radius: var(--radius);
   padding: 20px;
   box-shadow: var(--shadow-soft);
-  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 
 .card:hover {
   border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(20, 184, 166, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 50px rgba(20, 184, 166, 0.18);
 }
 
 .card-title {
@@ -555,6 +598,43 @@ main {
 
 .gap-large {
   gap: 24px;
+}
+
+.project.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 280ms ease, box-shadow 280ms ease, filter 280ms ease;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+.project.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.18), transparent 45%),
+              radial-gradient(circle at 80% 0%, rgba(20, 184, 166, 0.12), transparent 40%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 280ms ease;
+}
+
+.project.card:nth-child(2n) {
+  transform: translate3d(0, 0, 0) rotateZ(0.6deg);
+}
+
+.project.card:nth-child(2n+1) {
+  transform: translate3d(0, 0, 0) rotateZ(-0.6deg);
+}
+
+.project.card:hover {
+  transform: translate3d(0, -14px, 12px) rotateX(0.6deg) rotateY(-0.6deg) rotateZ(0deg);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  filter: drop-shadow(0 12px 25px rgba(20, 184, 166, 0.2));
+}
+
+.project.card:hover::after {
+  opacity: 1;
 }
 
 .project .tag-row {
