@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bati | Developer</title>
+  <meta name="description" content="Fullstack developer and UI/UX designer crafting responsive web experiences.">
+  <link rel="icon" type="image/x-icon" href="./public/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="./public/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Pure-CSS theme and menu toggles -->
+  <input type="checkbox" id="theme-toggle" class="visually-hidden" aria-label="Toggle light mode">
+  <div class="page">
+  <!-- Icon symbol sprite (lucide-style outlines) -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <symbol id="icon-moon" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="icon-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5" />
+        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="icon-x" viewBox="0 0 24 24">
+        <path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="icon-map" viewBox="0 0 24 24">
+        <path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="12" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      </symbol>
+      <symbol id="icon-mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="m3 7 9 6 9-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.15 12.8 19.79 19.79 0 0 1 .08 4.18 2 2 0 0 1 2.06 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2L6.1 9.9a16 16 0 0 0 8 8l1.35-1.22a2 2 0 0 1 2-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="icon-github" viewBox="0 0 24 24">
+        <path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.01c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 0 0-1.34-1.76c-1.1-.75.09-.74.09-.74a2.51 2.51 0 0 1 1.83 1.23 2.54 2.54 0 0 0 3.47 1 2.54 2.54 0 0 1 .76-1.6c-2.67-.3-5.47-1.34-5.47-5.95A4.67 4.67 0 0 1 6.16 8.5a4.34 4.34 0 0 1 .12-3.23s1-.32 3.3 1.23a11.38 11.38 0 0 1 6 0C17.88 4.95 18.9 5.27 18.9 5.27a4.34 4.34 0 0 1 .12 3.23 4.67 4.67 0 0 1 1.24 3.24c0 4.62-2.8 5.64-5.48 5.94a2.85 2.85 0 0 1 .81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .5Z" fill="currentColor"/>
+      </symbol>
+      <symbol id="icon-linkedin" viewBox="0 0 24 24">
+        <path d="M4.98 3.5a2.5 2.5 0 1 1-.02 5 2.5 2.5 0 0 1 .02-5ZM3 9h4v12H3zM17.5 9A4.5 4.5 0 0 1 22 13.5V21h-4v-6.5a1.5 1.5 0 0 0-3 0V21h-4V9h4v1.56A4.48 4.48 0 0 1 17.5 9Z" fill="currentColor"/>
+      </symbol>
+      <symbol id="icon-twitter" viewBox="0 0 24 24">
+        <path d="M22 5.92a7.38 7.38 0 0 1-2.12.58 3.7 3.7 0 0 0 1.62-2.04 7.39 7.39 0 0 1-2.34.9A3.69 3.69 0 0 0 16.5 4a3.7 3.7 0 0 0-3.7 3.7c0 .29.03.57.09.84a10.5 10.5 0 0 1-7.63-3.87 3.7 3.7 0 0 0 1.14 4.94 3.64 3.64 0 0 1-1.68-.46v.05a3.7 3.7 0 0 0 2.97 3.62 3.7 3.7 0 0 1-1.67.06A3.7 3.7 0 0 0 8.2 15.5 7.4 7.4 0 0 1 3 17.29a10.44 10.44 0 0 0 5.64 1.66c6.77 0 10.48-5.61 10.48-10.48 0-.16 0-.31-.01-.47A7.5 7.5 0 0 0 22 5.92Z" fill="currentColor"/>
+      </symbol>
+      <symbol id="icon-send" viewBox="0 0 24 24">
+        <path d="m22 2-7 20-4-8-8-4Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22 2 11 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="icon-facebook" viewBox="0 0 24 24">
+        <path d="M14 8h2V4h-2c-2.2 0-4 1.8-4 4v2H8v4h2v6h4v-6h2l1-4h-3V8c0-.55.45-1 1-1Z" fill="currentColor"/>
+      </symbol>
+      <symbol id="icon-code" viewBox="0 0 24 24">
+        <path d="m16 18 6-6-6-6M8 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="icon-server" viewBox="0 0 24 24">
+        <rect x="2" y="2" width="20" height="8" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="2" y="14" width="20" height="8" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M6 6h.01M6 18h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="icon-database" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="5" rx="9" ry="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3M3 9c0 1.66 4.03 3 9 3s9-1.34 9-3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      </symbol>
+      <symbol id="icon-branch" viewBox="0 0 24 24">
+        <path d="M6 3v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M6 15a3 3 0 1 0 3 3v-6a3 3 0 0 1 3-3h3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="18" cy="6" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="6" cy="3" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      </symbol>
+      <symbol id="icon-zap" viewBox="0 0 24 24">
+        <path d="M13 2 3 14h9l-1 8 10-12h-9z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="dot-background" aria-hidden="true">
+    <div class="dot-grid"></div>
+    <div class="floating-dots">
+      <span style="--x:8;--y:20;--s:7;--o:0.45;"></span>
+      <span style="--x:22;--y:35;--s:5;--o:0.35;"></span>
+      <span style="--x:40;--y:18;--s:6;--o:0.4;"></span>
+      <span style="--x:58;--y:28;--s:8;--o:0.5;"></span>
+      <span style="--x:72;--y:22;--s:5;--o:0.4;"></span>
+      <span style="--x:86;--y:15;--s:6;--o:0.45;"></span>
+      <span style="--x:12;--y:60;--s:6;--o:0.35;"></span>
+      <span style="--x:28;--y:70;--s:7;--o:0.4;"></span>
+      <span style="--x:48;--y:62;--s:5;--o:0.4;"></span>
+      <span style="--x:64;--y:68;--s:9;--o:0.5;"></span>
+      <span style="--x:80;--y:60;--s:6;--o:0.45;"></span>
+      <span style="--x:20;--y:85;--s:8;--o:0.35;"></span>
+      <span style="--x:44;--y:86;--s:6;--o:0.4;"></span>
+      <span style="--x:68;--y:86;--s:5;--o:0.35;"></span>
+      <span style="--x:88;--y:80;--s:7;--o:0.45;"></span>
+    </div>
+  </div>
+
+  <header class="navbar">
+    <input type="checkbox" id="menu-toggle" class="visually-hidden" aria-label="Toggle navigation menu">
+    <div class="nav-inner">
+      <a class="logo" href="#home">
+        <img src="./public/logo.png" alt="Bati Jano logo" width="36" height="36">
+        <span>Bati</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <label for="theme-toggle" class="icon-button theme-toggle" aria-label="Toggle theme">
+          <svg class="icon sun"><use href="#icon-sun"></use></svg>
+          <svg class="icon moon"><use href="#icon-moon"></use></svg>
+        </label>
+        <label for="menu-toggle" class="icon-button mobile-only menu-toggle" aria-label="Toggle menu">
+          <svg class="icon menu"><use href="#icon-menu"></use></svg>
+          <svg class="icon close"><use href="#icon-x"></use></svg>
+        </label>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="container hero-content">
+        <div class="text-center">
+          <h1 class="headline">Bati Jano</h1>
+          <p class="subtitle">Fullstack Developer &amp; UI/UX Designer</p>
+          <p class="tagline">"I craft beautiful, responsive web experiences with clean code and thoughtful design that brings ideas to life."</p>
+          <div class="button-row">
+            <a class="btn outline" href="#projects">View Projects</a>
+            <a class="btn outline" href="https://flowcv.com/resume/6orquavkwljr" target="_blank" rel="noreferrer">View Resume</a>
+            <a class="btn outline" href="https://github.com/bati58" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn outline" href="https://linkedin.com/in/bati-jano" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn outline" href="https://t.me/CMY_TR" target="_blank" rel="noreferrer">Let's Talk</a>
+          </div>
+        </div>
+
+        <div class="tech-strip">
+          <div class="tech-grid">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="invert-on-dark">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container grid two-columns">
+        <div>
+          <p class="eyebrow">About <span class="line"></span></p>
+          <h2 class="section-title">Building practical products with thoughtful UX</h2>
+          <p class="body-text">I am a Computer Science student and full-stack developer who builds responsive web apps with a focus on clarity, performance, and maintainability. I enjoy turning product ideas into clean interfaces backed by reliable APIs and well-structured data.</p>
+          <p class="body-text">My stack centers on JavaScript, React, Node.js, and MongoDB, and I keep expanding through real-world projects. I am looking for opportunities to contribute to teams that value thoughtful engineering and user-centered design.</p>
+          <div class="card-grid">
+            <div class="card">
+              <h3 class="card-title">Frontend Craft</h3>
+              <p class="small-text">Responsive interfaces with clean, intuitive interaction patterns.</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Backend Reliability</h3>
+              <p class="small-text">APIs and data layers designed for clarity, speed, and maintainability.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="sticky-card">
+          <h3 class="card-title">How I Work</h3>
+          <p class="small-text">I balance delivery speed with engineering quality, and keep communication straightforward from start to launch.</p>
+          <ul class="list">
+            <li>Translate business goals into scoped technical milestones</li>
+            <li>Build modular, reusable frontend and backend components</li>
+            <li>Document decisions and keep codebase maintainable for teams</li>
+            <li>Iterate quickly with measurable improvements to UX and performance</li>
+          </ul>
+          <p class="eyebrow small uppercase">Outcome-driven development with clean handoff standards.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <p class="eyebrow">Skills <span class="line"></span></p>
+        <h2 class="section-title">Current toolkit</h2>
+        <div class="grid four-columns">
+          <div class="card">
+            <h3 class="card-title">Frontend</h3>
+            <div class="pill-row">
+              <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="">HTML</span>
+              <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="">CSS</span>
+              <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="">JavaScript</span>
+              <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="">React</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Backend</h3>
+            <div class="pill-row">
+              <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="">Node.js</span>
+              <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" class="invert-on-dark">Express</span>
+              <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="">Java</span>
+              <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="">Python</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Databases</h3>
+            <div class="pill-row">
+              <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="">MongoDB</span>
+              <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="">MySQL</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Tools</h3>
+            <div class="pill-row">
+              <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="">Git/GitHub</span>
+              <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="">VS Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Latest Projects</h2>
+          <div class="rule"></div>
+        </div>
+        <div class="grid two-columns gap-large">
+          <article class="card project">
+            <h3 class="card-title">YouTube Clone</h3>
+            <p class="small-text">Pixel-focused YouTube UI clone featuring search, category filters, and a responsive video player layout.</p>
+            <div class="tag-row"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <ul class="bullet-list">
+              <li>Responsive layout matching YouTube's design</li>
+              <li>Search and category filtering system</li>
+            </ul>
+            <div class="link-row">
+              <a href="https://bati58.github.io/youtube.com-clone/" target="_blank" rel="noreferrer">Live</a>
+              <a href="https://github.com/bati58/youtube.com-clone" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+          <article class="card project">
+            <h3 class="card-title">Fenet Cafe</h3>
+            <p class="small-text">Cafe management platform for online ordering and table reservations with admin tools for inventory and sales tracking.</p>
+            <div class="tag-row"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Express</span></div>
+            <ul class="bullet-list">
+              <li>Auth + admin dashboard for management</li>
+              <li>Real-time menu and reservation updates</li>
+            </ul>
+            <div class="link-row">
+              <a href="https://github.com/bati58/Fenet_Cafe-menu" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+          <article class="card project">
+            <h3 class="card-title">Personal Finance Tracker</h3>
+            <p class="small-text">Full-stack personal finance tracker with React frontend and Node.js/Express backend backed by MongoDB Atlas.</p>
+            <div class="tag-row"><span>React</span><span>Vite</span><span>Node.js</span><span>MongoDB</span></div>
+            <ul class="bullet-list">
+              <li>Income and expense tracking with reports</li>
+              <li>JWT authentication + REST API</li>
+            </ul>
+            <div class="link-row">
+              <a href="https://personal-finance-tracker-virid-nine.vercel.app/" target="_blank" rel="noreferrer">Live</a>
+              <a href="https://github.com/bati58/Personal-Finance-Tracker" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+          <article class="card project">
+            <h3 class="card-title">MovieHub</h3>
+            <p class="small-text">Full-stack movie discovery platform with a Node/Express API, MongoDB storage, and vanilla JS frontend powered by TMDB.</p>
+            <div class="tag-row"><span>Node.js</span><span>Express</span><span>MongoDB</span><span>TMDB API</span></div>
+            <ul class="bullet-list">
+              <li>TMDB data integration with trailers</li>
+              <li>Search, filters, pagination + watchlist</li>
+            </ul>
+            <div class="link-row">
+              <a href="https://moviehub-xpqp.onrender.com" target="_blank" rel="noreferrer">Live</a>
+              <a href="https://github.com/bati58/MovieHub" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+          <article class="card project">
+            <h3 class="card-title">Smilecare Dental Clinic</h3>
+            <p class="small-text">Modern, responsive dental clinic website with React + Vite frontend, Express + MongoDB backend.</p>
+            <div class="tag-row"><span>React</span><span>Vite</span><span>Express</span><span>MongoDB</span></div>
+            <ul class="bullet-list">
+              <li>React + Vite for fast performance</li>
+              <li>Real appointment submission API</li>
+            </ul>
+            <div class="link-row">
+              <a href="https://github.com/bati58/smilecare_dental_clinic.git" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+          <article class="card project">
+            <h3 class="card-title">E-commerce</h3>
+            <p class="small-text">Full-stack e-commerce app with JWT authentication, product discovery, cart/checkout, and order history.</p>
+            <div class="tag-row"><span>Node.js</span><span>Express</span><span>MongoDB</span><span>TypeScript</span></div>
+            <ul class="bullet-list">
+              <li>JWT authentication + account dashboard</li>
+              <li>Cart, checkout, and order history</li>
+            </ul>
+            <div class="link-row">
+              <a href="https://github.com/bati58/e-commerce.git" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <p class="eyebrow">Services <span class="line"></span></p>
+        <h2 class="section-title">Services I can provide for your product</h2>
+        <div class="grid three-columns">
+          <div class="card service"><span class="icon-circle"><svg><use href="#icon-code"></use></svg></span><p class="small-text strong">Build responsive, modern web applications</p></div>
+          <div class="card service"><span class="icon-circle"><svg><use href="#icon-server"></use></svg></span><p class="small-text strong">Design RESTful APIs and backend systems</p></div>
+          <div class="card service"><span class="icon-circle"><svg><use href="#icon-database"></use></svg></span><p class="small-text strong">Work with MongoDB and MySQL data models</p></div>
+          <div class="card service"><span class="icon-circle"><svg><use href="#icon-branch"></use></svg></span><p class="small-text strong">Collaborate efficiently with Git and GitHub</p></div>
+          <div class="card service"><span class="icon-circle"><svg><use href="#icon-zap"></use></svg></span><p class="small-text strong">Learn quickly and adapt to new technologies</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container grid contact-grid">
+        <div class="card contact-card">
+          <div class="accent-bar"></div>
+          <h3 class="card-title">Open to full-time, freelance, and collaboration opportunities.</h3>
+          <p class="small-text">I usually reply quickly. Share your goal, timeline, and what success looks like.</p>
+          <ul class="contact-list">
+            <li><span class="icon-circle"><svg><use href="#icon-map"></use></svg></span> Adama, Ethiopia</li>
+            <li><span class="icon-circle"><svg><use href="#icon-mail"></use></svg></span> batidev01@gmail.com</li>
+            <li><span class="icon-circle"><svg><use href="#icon-phone"></use></svg></span> +251786562215</li>
+          </ul>
+          <div class="social-row">
+            <a class="icon-button square" href="https://github.com/bati58" target="_blank" aria-label="GitHub"><svg><use href="#icon-github"></use></svg></a>
+            <a class="icon-button square" href="https://www.linkedin.com/in/bati-jano" target="_blank" aria-label="LinkedIn"><svg><use href="#icon-linkedin"></use></svg></a>
+            <a class="icon-button square" href="https://twitter.com/moonba1212" target="_blank" aria-label="X/Twitter"><svg><use href="#icon-twitter"></use></svg></a>
+            <a class="icon-button square" href="https://t.me/CMY_TR" target="_blank" aria-label="Telegram"><svg><use href="#icon-send"></use></svg></a>
+            <a class="icon-button square" href="https://www.facebook.com/share/1DB44qhRt9/" target="_blank" aria-label="Facebook"><svg><use href="#icon-facebook"></use></svg></a>
+          </div>
+        </div>
+        <div class="card contact-form">
+          <div class="accent-bar"></div>
+          <form id="contact-form" action="https://formsubmit.co/batidev01@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Portfolio contact">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://bati58.github.io/personal_portfolio/#form-sent">
+            <div class="form-row">
+              <label>
+                <span>Your Name</span>
+                <input type="text" name="name" required placeholder="Your Name" minlength="2">
+              </label>
+              <label>
+                <span>Your Email</span>
+                <input type="email" name="email" required placeholder="Your Email">
+              </label>
+            </div>
+            <label class="full">
+              <span>Message</span>
+              <textarea name="message" required rows="6" minlength="10" placeholder="Tell me about your project"></textarea>
+            </label>
+            <button type="submit" class="btn primary full">Send Message</button>
+          </form>
+          <p class="form-status info">Form submits via FormSubmit (no JS). It redirects to your live page (<code>bati58.github.io/personal_portfolio/#form-sent</code>) to show the success banner.</p>
+          <p class="form-status success" id="form-sent" aria-live="polite">Message sent! I will get back to you soon.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3 class="card-title">Bati Jano</h3>
+        <p class="small-text">Full-stack developer focused on clean UX and reliable backends.</p>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="social-row">
+        <a class="icon-button square" href="https://github.com/bati58" target="_blank" aria-label="GitHub"><svg><use href="#icon-github"></use></svg></a>
+        <a class="icon-button square" href="https://www.linkedin.com/in/bati-jano" target="_blank" aria-label="LinkedIn"><svg><use href="#icon-linkedin"></use></svg></a>
+        <a class="icon-button square" href="mailto:batidev01@gmail.com" aria-label="Email"><svg><use href="#icon-mail"></use></svg></a>
+        <a class="icon-button square" href="https://www.instagram.com/bati_jano" target="_blank" aria-label="Instagram">IG</a>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 Bati Jano | All Rights Reserved</p>
+  </footer>
+
+  </div>
+</body>
+</html>
