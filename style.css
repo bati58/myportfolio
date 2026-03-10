@@ -290,11 +290,6 @@ main {
   font-size: 1.15rem;
 }
 
-.logo span {
-  padding-bottom: 4px;
-  border-bottom: 2px solid var(--foreground);
-}
-
 .logo img {
   width: 36px;
   height: 36px;
