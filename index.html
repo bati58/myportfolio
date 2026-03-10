@@ -443,9 +443,17 @@
             <div class="form-row">
               <label>
                 <span>Your Name</span>
-                <input type="text" name="name" required placeholder="Your Name" minlength="2" inputmode="text"
-                       pattern="^(?!.*\\d)[A-Za-z][A-Za-z '\\-]{1,}(?: [A-Za-z][A-Za-z '\\-]{1,})*$"
-                       title="Letters only; spaces, hyphens, apostrophes allowed.">
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="Your Name"
+                  minlength="2"
+                  maxlength="60"
+                  autocomplete="name"
+                  inputmode="text"
+                  pattern="^[A-Za-z][A-Za-z '\\-]{0,58}[A-Za-z]$"
+                  title="Letters only; spaces, hyphens, apostrophes allowed.">
               </label>
               <label>
                 <span>Your Email</span>
