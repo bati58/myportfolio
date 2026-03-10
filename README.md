@@ -8,6 +8,7 @@ A fast, single‑page portfolio with animated project cards, light/dark theme to
 - Light/Dark theme toggle (sun/moon icon) applied to home and detail pages.
 - Premium image cards with primary and secondary screenshots per project.
 - Static build—no backend required.
+- Contact form sends email via FormSubmit (no JS/backend).
 
 ## Tech Stack
 - HTML5, CSS3 (no JS required for core interactions)
