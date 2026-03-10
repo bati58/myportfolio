@@ -713,18 +713,6 @@ textarea {
   resize: vertical;
 }
 
-.form-status {
-  display: none;
-  font-weight: 700;
-  font-size: 0.9rem;
-  margin: 0;
-}
-
-.form-status.success { color: #16a34a; }
-.form-status.error { color: #ef4444; }
-.form-status.info { display: block; color: var(--muted-foreground); margin-top: 8px; }
-#form-sent { display: none; }
-:target#form-sent { display: block; }
 
 .social-row {
   display: flex;
