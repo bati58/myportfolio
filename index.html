@@ -443,7 +443,9 @@
             <div class="form-row">
               <label>
                 <span>Your Name</span>
-                <input type="text" name="name" required placeholder="Your Name" minlength="2">
+                <input type="text" name="name" required placeholder="Your Name" minlength="2" inputmode="text"
+                       pattern="^(?!.*\\d)[A-Za-z][A-Za-z '\\-]{1,}(?: [A-Za-z][A-Za-z '\\-]{1,})*$"
+                       title="Letters only; spaces, hyphens, apostrophes allowed.">
               </label>
               <label>
                 <span>Your Email</span>
@@ -456,7 +458,10 @@
             </label>
             <button type="submit" class="btn primary full">Send Message</button>
           </form>
-          <p class="form-status success" id="form-sent" aria-live="polite">Message sent! I will get back to you soon.</p>
+          <p class="form-status success" id="form-sent" aria-live="polite">
+            Message sent! I will get back to you soon.
+            <a class="form-status-close" href="#contact" aria-label="Dismiss message">×</a>
+          </p>
         </div>
       </div>
     </section>
