@@ -765,6 +765,15 @@ textarea {
   color: var(--muted-foreground);
 }
 
+.footer-links.footer-links-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(2, auto);
+  gap: 8px 18px;
+  margin-top: 10px;
+}
+
 .footer-links a:hover {
   color: var(--foreground);
 }
